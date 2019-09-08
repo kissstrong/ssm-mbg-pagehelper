@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.cyz.dao.DeptMapper">
+  <resultMap id="BaseResultMap" type="com.cyz.domain.Dept">
+    <result column="did" jdbcType="INTEGER" property="did" />
+    <result column="dname" jdbcType="VARCHAR" property="dname" />
+    <result column="sid" jdbcType="INTEGER" property="sid" />
+  </resultMap>
+  <insert id="insert" parameterType="com.cyz.domain.Dept">
+    insert into dept (did, dname, sid
+      )
+    values (#{did,jdbcType=INTEGER}, #{dname,jdbcType=VARCHAR}, #{sid,jdbcType=INTEGER}
+      )
+  </insert>
+  <select id="selectAll" resultMap="BaseResultMap">
+    select did, dname, sid
+    from dept
+  </select>
+</mapper>
